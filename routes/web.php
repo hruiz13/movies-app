@@ -18,7 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('movies', [PruebasController::class, 'index']);
+Route::get('movies', [PruebasController::class, 'index'])->name('movies.index');
+Route::get('movies/create', [PruebasController::class, 'create'])->name('movies.create');
+Route::post('movies/create', [PruebasController::class, 'store'])->name('movies.store');
+Route::get('movies/{movie}', [PruebasController::class, 'show'])->name('movies.show');
 
 // Route::get('/', function(){
 //     // $movie = App\Movies::findOrFail(1);
