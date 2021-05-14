@@ -8,35 +8,40 @@
           @csrf
           <label>
                Title:
-               <input type="text" name="title">
+               <input type="text" name="title" value="{{old('title')}}">
           </label>
+          @error('title')
+               <br>
+               <small>*{{$message}}</small>
+               <br>              
+          @enderror
           <label>
                Year:
-               <input type="text" name="year">
+               <input type="text" name="year" value="{{old('year')}}">
           </label>
           <label>
                Type:
-               <input type="text" name="type">
+               <input type="text" name="type" value="{{old('type')}}">
           </label>
           <label>
                Poster:
-               <input type="text" name="poster">
+               <input type="text" name="poster" value="{{old('poster')}}">
           </label>
           <label>
                Runtime:
-               <input type="text" name="runtime">
+               <input type="text" name="runtime" value="{{old('runtime')}}">
           </label>
           <label>
                Language:
-               <input type="text" name="language">
+               <input type="text" name="language" value="{{old('language')}}">
           </label>
           <label>
                Actors:
-               <input type="text" name="actors">
+               <input type="text" name="actors" value="{{old('actors')}}">
           </label>
           <label>
                Description:
-               <textarea name="description"></textarea>
+               <textarea name="description"> {{old('description')}}</textarea>
           </label>
           <button type="submit">Guardar</button>
           

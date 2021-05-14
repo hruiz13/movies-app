@@ -18,14 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('movies', [PruebasController::class, 'index'])->name('movies.index');
 Route::get('movies/create', [PruebasController::class, 'create'])->name('movies.create');
-Route::post('movies/create', [PruebasController::class, 'store'])->name('movies.store');
+Route::post('movies', [PruebasController::class, 'store'])->name('movies.store');
 Route::get('movies/{movie}', [PruebasController::class, 'show'])->name('movies.show');
-
-// Route::get('/', function(){
-//     // $movie = App\Movies::findOrFail(1);
-//     // return $movie;
-//     $user = App\Movies::findOrFail(1);
-//     return $user;
-// });
+Route::get('movies/{movie}/edit', [PruebasController::class, 'edit'])->name('movies.edit');
+Route::put('movies/{movie}', [PruebasController::class, 'update'])->name('movies.update');
+Route::delete('movies/{movie}', [PruebasController::class, 'destroy'])->name('movies.destroy');
+*/
+//reducing methods
+Route::resource('movies', PruebasController::class);
