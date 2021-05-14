@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Email</h1>
-    <p>This is the first email</p>
+    <p>Contact email</p>
+    <p><strong>Name:</strong>{{$contact['name']}}</p>
+    <p><strong>Mail:</strong>{{$contact['email']}}</p>
+    <p><strong>Message:</strong>{{$contact['message']}}</p>
 </body>
 </html>

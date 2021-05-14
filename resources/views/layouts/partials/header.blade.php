@@ -11,6 +11,9 @@
             <li>
                 <a href="{{route('about')}}"  class="{{request()->routeIs('about') ? 'active' : ''}}">About</a>
             </li>
+            <li>
+                <a href="{{route('contact.index')}}"  class="{{request()->routeIs('contact.*') ? 'active' : ''}}">Contact</a>
+            </li>
         </ul>
     </nav>
 </header>

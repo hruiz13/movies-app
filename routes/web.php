@@ -1,9 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PruebasController;
-use App\Mail\ContactanosMailable;
-use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,8 +32,6 @@ Route::resource('movies', PruebasController::class);
 
 Route::view('about', 'about')->name('about');
 
-Route::get('contactanos', function () {
-    $correo = new ContactanosMailable;
-    Mail::to('hruiz13@hotmail.com')->send($correo);
-    return 'Mensaje enviado.';
-});
+//contact
+Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');

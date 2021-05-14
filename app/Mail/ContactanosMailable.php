@@ -13,14 +13,16 @@ class ContactanosMailable extends Mailable
 
     public $subject = 'Informacion de contacto';
 
+    public $contact;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
