@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Movie;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class MovieFactory extends Factory
 {
@@ -21,8 +22,10 @@ class MovieFactory extends Factory
      */
     public function definition()
     {
+        $name = $this->faker->sentence();
         return [
-            'title' => $this->faker->sentence(),
+            'title' => $name,
+            'slug' => Str::slug($name, '-'),
             'year' => $this->faker->numberBetween(1900, 2020),
             'imdbID' => $this->faker->numberBetween(0, 5),
             'type' => $this->faker->randomElement(['accion', 'ficcion', 'fantasia', 'terror', 'comedia']),

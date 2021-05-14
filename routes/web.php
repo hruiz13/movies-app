@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PruebasController;
-
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +16,8 @@ use App\Http\Controllers\PruebasController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 
 /*
 Route::get('movies', [PruebasController::class, 'index'])->name('movies.index');
@@ -29,3 +30,11 @@ Route::delete('movies/{movie}', [PruebasController::class, 'destroy'])->name('mo
 */
 //reducing methods
 Route::resource('movies', PruebasController::class);
+
+Route::view('about', 'about')->name('about');
+
+Route::get('contactanos', function () {
+    $correo = new ContactanosMailable;
+    Mail::to('hruiz13@hotmail.com')->send($correo);
+    return 'Mensaje enviado.';
+});

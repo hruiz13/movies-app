@@ -14,4 +14,9 @@ class Movie extends Model
     {
         return $this->belongsToMany('App\Models\User'); //2nd param, the table(user_movie), 3rd and 4th param are the names, 
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

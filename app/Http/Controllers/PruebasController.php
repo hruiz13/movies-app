@@ -71,9 +71,9 @@ class PruebasController extends Controller
         return redirect()->route('movies.show', $movie->id);
     }
 
-    public function show($mov)
+    public function show(Movie $movie)
     {
-        $movie = Movie::find($mov);
+        //$movie = Movie::find($movie);
         return view('movies.show', compact('movie'));
     }
 
