@@ -14,13 +14,15 @@
         }
     </style>
 </head>
-<body class="bg-blue-900">
+<body class="bg-gray-700">
+    
     @include('layouts.partials.header')
-    <div class="container bg-blue-600">
+    
+    <div class="container bg-gray-600 mt-5">
         @yield('content')
     </div>
 
     @include('layouts.partials.footer')
-    
 </body>
+<script src="{{ asset('js/app.js') }}" defer></script>
 </html>

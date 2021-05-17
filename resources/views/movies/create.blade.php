@@ -3,8 +3,10 @@
 @section('title', 'Add Movie')    
 
 @section('content')
-     <h1>Add movie</h1>
-     <form action="{{route('movies.store')}}" method="POST">
+     <h1 class="text-center text-pink-300 font-bold">Add movie</h1>
+     <span id="search">sea</span>
+
+     {{-- <form action="{{route('movies.store')}}" method="POST">
           @csrf
           <label>
                Title:
@@ -45,5 +47,6 @@
           </label>
           <button type="submit">Guardar</button>
           
-     </form>
+     </form> --}}
+     <br>
 @endsection

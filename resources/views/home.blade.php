@@ -5,7 +5,7 @@
 @section('content')
     <div class="m-6">
 
-        <h1>Welcome to movies page</h1>
+        <h1 class="font-roboto">Welcome to movies page</h1>
         <h2>My last viewed movies!</h2>
         <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-4">
             <div class="bg-blue-300 col-span-2">A</div>
